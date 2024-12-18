@@ -1,0 +1,90 @@
+/* Navbar Base Styles */
+.navcon{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar {
+  z-index: 666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.logout {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.logout:hover {
+  background-color: #ff1a1a;
+}
+
+/* Responsive Styles */
+.menu-toggle {
+  width: 60px;
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links.active li {
+  margin: 0.5rem 0;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logout {
+    display: none; /* Optional: hide the logout button on smaller screens */
+  }
+}

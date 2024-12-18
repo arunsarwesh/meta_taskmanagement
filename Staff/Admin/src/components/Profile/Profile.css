@@ -1,0 +1,361 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  line-height: 1.6;
+}
+
+/* Profile Container */
+.profile-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #1e1e1e; /* Slightly lighter background for the profile */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* Profile Header */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Error and Loading States */
+.error-message,
+p.loading {
+  color: #f44336;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/* Profile Info Section */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Ensures the image fills the circle without distortion */
+  object-position: top center; /* Adjust the position to focus on the face */
+  margin-bottom: 20px;
+  animation: zoomIn 1s ease;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.profile-info a {
+  color: #4f8ef7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
+/* Section Titles */
+.section h3 {
+  font-size: 1.6rem;
+  color: #4f8ef7;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Lists for Reports, Courses, Projects */
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 20px;
+}
+
+.section li {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: #fff;
+}
+
+.section li strong {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section li p {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+/* No Data Text */
+.section p {
+  color: #888;
+  text-align: center;
+}
+
+/* Attendance Button Style */
+button {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 114, 255, 0.2);
+  text-transform: uppercase;
+}
+
+/* Hover Effect */
+button:hover {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  transform: scale(1.05) translateY(-3px);
+}
+
+/* Focused Button Style */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px 3px rgb(246, 5, 5);
+}
+
+/* Disabled State */
+button:disabled {
+  background: #555;
+  color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Slide Effect for Profile */
+.profile-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.toggle-btn {
+  position: absolute;
+  padding: 1.5px 3px;
+  margin-left: 470px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.prjct-btn {
+  position: absolute;
+  padding: 1.5px 3px;
+  margin-left: 460px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.wrk-btn {
+  position: absolute;
+  padding: 1.5px 3px;
+  margin-left: 550px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ffff;
+  cursor: pointer;
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content */
+.modal-content {
+  background: #333;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal heading */
+.modal-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Form styling */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Label styling */
+.modal-content label {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+/* Input and textarea styling */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect */
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #0b2be6;
+}
+
+.modal-content .cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Space between buttons */
+.modal-content .save-btn,
+.modal-content .cancel-btn {
+  margin-top: 10px;
+}
+
+/* Profile Info Animation */
+.profile-info {
+  animation: slide-in 0.5s ease-out;
+}
+
+/* Footer */
+.footer {
+  color: #bbb;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+/* Footer Colors */
+span1 {
+  color: #00c6ff;
+}
+
+span2 {
+  color: #0072ff;
+}
+
+/* Slide-in Animation */
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 15px;
+  }
+
+  .profile-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-info img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info p {
+    text-align: center;
+  }
+
+  .section ul {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 350px;
+  }
+
+  .toggle-btn,
+  .prjct-btn,
+  .wrk-btn {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
+  .assign-project-btn {
+    margin-left: 10px;
+    padding: 2px 5px;
+  }
+}
